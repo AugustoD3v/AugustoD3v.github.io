@@ -1,218 +1,280 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TransformaFácil | Emagreça de Verdade</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TransformaFácil | Emagreça de verdade com leveza</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0e6cfd3.js" crossorigin="anonymous"></script>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #f9f9f9;
-      color: #1e1e1e;
-      line-height: 1.6;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #0f172a; color: white; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+
     header {
-      background: linear-gradient(to right, #38bdf8, #0ea5e9);
-      color: white;
-      padding: 4rem 1.5rem 2rem;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1584467735871-23a5b1caa634?auto=format&fit=crop&w=1500&q=80') center/cover;
+      padding: 8rem 2rem 6rem;
       text-align: center;
+      color: #fff;
     }
     header h1 {
-      font-size: 3rem;
-      margin: 0;
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
     }
     header p {
-      font-size: 1.3rem;
-      margin-top: 1rem;
-      font-weight: 500;
-    }
-    .video {
-      text-align: center;
-      margin: 2rem 0;
-    }
-    .video iframe {
-      width: 90%;
-      max-width: 600px;
-      height: 340px;
-      border-radius: 12px;
-    }
-    section {
-      padding: 3rem 1.5rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    section:nth-child(even) {
-      background: #f0f9ff;
-    }
-    section h2 {
-      color: #0ea5e9;
-      margin-top: 2rem;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    ul li::before {
-      content: '✅ ';
-    }
-    .testimonial {
-      background: #fff;
-      padding: 1.5rem;
-      border-left: 5px solid #0ea5e9;
-      margin-top: 2rem;
-      border-radius: 8px;
-    }
-    .testimonial img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-top: 0.5rem;
-    }
-    .testimonial strong {
-      display: block;
-      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
     }
     .cta {
-      text-align: center;
-      margin: 3rem 0;
-    }
-    .cta a {
-      background: #0ea5e9;
-      color: white;
-      text-decoration: none;
+      margin-top: 2rem;
+      background: #3b82f6;
+      color: #fff;
       padding: 1rem 2rem;
+      display: inline-block;
       border-radius: 8px;
-      font-size: 1.2rem;
-      font-weight: 700;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      font-size: 1.1rem;
+      font-weight: 600;
       transition: background 0.3s;
     }
-    .cta a:hover {
-      background: #0284c7;
+    .cta:hover { background: #2563eb; }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
     }
-    #timer {
+    .section h2 {
+      font-size: 2rem;
       text-align: center;
-      font-size: 1.1rem;
-      background: #fef3c7;
-      padding: 1rem;
-      margin: 2rem auto;
-      max-width: 400px;
-      border-radius: 8px;
+      margin-bottom: 2.5rem;
     }
-    .fixed-cta {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #0ea5e9;
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .feature-box {
+      background: #f8fafc;
+      color: #0f172a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      position: relative;
+      font-size: 0.95rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .feature-box::before {
+      content: "";
+      flex-shrink: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: #3b82f6;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .feature-box i {
+      position: absolute;
+      top: 1.7rem;
+      left: 1.8rem;
       color: white;
-      padding: 0.8rem 2rem;
-      border-radius: 30px;
+      font-size: 1rem;
+      z-index: 2;
+    }
+    .feature-box p {
+      margin-left: 2.5rem;
+    }
+    @media (max-width: 600px) {
+      .feature-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .feature-box p {
+        margin-left: 0;
+      }
+      .feature-box i {
+        top: 1.2rem;
+        left: 1.2rem;
+      }
+    }
+
+    .price-box {
+      background: #f8fafc;
+      color: #0f172a;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 600px;
+      margin: 2rem auto 0;
+    }
+    .price-box h3 {
+      font-size: 2.2rem;
+      color: #1d4ed8;
+      margin-bottom: 0.5rem;
+    }
+    .price-box p {
+      font-size: 1.1rem;
+    }
+    .faq-item {
+      background: #111827;
+      border-bottom: 1px solid #374151;
+      padding: 1.25rem 1rem;
+      cursor: pointer;
+    }
+    .faq-item:hover {
+      background: #1f2937;
+    }
+    .faq-item h4 {
+      font-size: 1rem;
       font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 0 12px rgba(0,0,0,0.2);
-      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+    .faq-item .answer {
+      margin-top: 0.75rem;
+      color: #cbd5e1;
+      display: none;
+    }
+    .faq-item.open .answer {
+      display: block;
+    }
+    .faq-item.open h4 span {
+      transform: rotate(45deg);
+    }
+    .faq-item h4 span {
+      transition: 0.2s;
+      font-size: 1.25rem;
+    }
+    .faq-intro {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .faq-intro h3 {
+      font-size: 1.1rem;
+      color: #60a5fa;
+      font-weight: 600;
+    }
+    .faq-intro p {
+      font-size: 1rem;
+      color: #cbd5e1;
+      max-width: 700px;
+      margin: 0.5rem auto 0;
     }
     footer {
       text-align: center;
-      padding: 2rem 1rem;
-      background: #e5e7eb;
+      padding: 2rem;
       font-size: 0.9rem;
+      color: #9ca3af;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>TransformaFácil</h1>
-    <p>O método que finalmente fez você emagrecer vai começar agora.</p>
+    <h1>Transforme seu corpo com leveza e constância</h1>
+    <p>O método que ensina como perder peso com alimentação real e rotina possível. Sem culpa. Sem exagero. Sem desistir.</p>
+    <a href="#inscricao" class="cta">QUERO COMEÇAR AGORA</a>
   </header>
 
-  <div class="video">
-    <iframe src="https://www.youtube.com/embed/" frameborder="0" allowfullscreen></iframe>
-  </div>
-
-  <div id="timer">
-    Oferta termina em: <span id="countdown">00:00:00</span>
-  </div>
-
-  <section>
-    <h2>Por que o TransformaFácil é diferente?</h2>
-    <p>Você já tentou de tudo para emagrecer, mas não consegue manter. O problema não é você. É o plano irreal que te ensinaram.</p>
-    <p>Com o TransformaFácil, você aprende a emagrecer de forma possível, com alimentação real, treino inteligente e controle emocional.</p>
-  </section>
-
-  <section>
-    <h2>O que você vai receber</h2>
-    <ul>
-      <li>4 Módulos com vídeos curtos e PDF de apoio</li>
-      <li>Plano alimentar sem dieta maluca</li>
-      <li>Treinos adaptáveis (casa ou academia)</li>
-      <li>Técnicas para parar de desistir</li>
-      <li>Bônus: suplementos, compulsão, intestino e mais</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Pra quem é</h2>
-    <ul>
-      <li>Pra quem já tentou emagrecer e falhou</li>
-      <li>Pra quem sofre com ansiedade, compulsão ou culpa</li>
-      <li>Pra quem quer resultado real, sem perfeição</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Garantia total</h2>
-    <p>Você tem 7 dias para testar o curso. Se não gostar, devolvemos seu dinheiro. Simples assim.</p>
-  </section>
-
-  <div class="cta">
-    <a href="#">QUERO EMAGRECER DE VERDADE</a>
-  </div>
-
-  <section>
-    <h2>Depoimentos reais</h2>
-    <div class="testimonial">
-      <p>“Eu já tinha desistido de emagrecer. Com o TransformaFácil, perdi 8kg sem cortar tudo. É possível!”</p>
-      <img src="https://via.placeholder.com/60" alt="Rosto do aluno" />
-      <strong>Carla S., 34 anos</strong>
+  <section class="section">
+    <h2>Este método é para você se...</h2>
+    <div class="features">
+      <div class="feature-box">
+        <i class="fas fa-ban"></i>
+        <p>Já tentou várias dietas restritivas e nunca conseguiu manter o peso</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-heartbeat"></i>
+        <p>Quer emagrecer comendo bem, sem abrir mão do prazer de comer</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-dumbbell"></i>
+        <p>Não tem tempo ou paciência para passar horas na academia</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-smile-beam"></i>
+        <p>Deseja recuperar autoestima, leveza e confiança no espelho</p>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2>Dúvidas frequentes</h2>
-    <ul>
-      <li><strong>Preciso ir à academia?</strong> Não. Você pode treinar em casa.</li>
-      <li><strong>Tem cardápio?</strong> Tem sugestões reais, adaptáveis ao seu dia.</li>
-      <li><strong>Tem suporte?</strong> Sim. Você pode tirar dúvidas por e-mail.</li>
-    </ul>
+  <section class="section">
+    <h2>Por que esse método é diferente de tudo que você já tentou?</h2>
+    <div class="features">
+      <div class="feature-box">
+        <i class="fas fa-check-circle"></i>
+        <p>Emagrecimento definitivo e sem efeito sanfona</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-utensils"></i>
+        <p>Coma o que você gosta com estratégia e sem culpa</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-clock"></i>
+        <p>Resultados reais com 30 minutos por dia</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-leaf"></i>
+        <p>Natural, sem remédios ou dietas malucas</p>
+      </div>
+    </div>
   </section>
 
-  <a href="#" class="fixed-cta">QUERO EMAGRECER COM O TRANSFORMAFÁCIL</a>
+  <section class="section" id="inscricao">
+    <h2>7 dias para testar sem riscos</h2>
+    <div class="price-area">
+      <div class="left-text">
+        <h3>7 dias para testar sem riscos!</h3>
+        <p>Estamos tão confiantes na eficácia deste método que oferecemos uma garantia incondicional.</p>
+        <p>Se em 7 dias você não notar resultados ou não estiver satisfeita, <strong>devolvemos 100% do seu investimento, sem burocracia!</strong></p>
+        <p>Ou você transforma seu corpo e sua vida, ou recebe seu dinheiro de volta. <strong>Simples assim!</strong></p>
+        <p><strong>Risco zero para você!</strong> Comece agora com total segurança!</p>
+      </div>
+      <div class="price-box">
+        <ul>
+          <li>Método completo para <strong>emagrecer sem sofrimento</strong> e <strong>sem efeito sanfona</strong>.</li>
+          <li>Aprenda a comer de tudo sem culpa e conquiste <strong>resultados duradouros</strong>.</li>
+          <li>Acesso imediato ao passo a passo que <em>já transformou muitas mulheres</em>.</li>
+          <li><strong>Bônus exclusivos</strong> para acelerar sua transformação!</li>
+        </ul>
+        <div class="old-price">De R$ 197,00 por apenas</div>
+        <div class="price">12x de R$ 9,90<br><span style="font-size: 1rem;">ou R$ 97,00 à vista</span></div>
+        <a href="#" class="cta">QUERO EMAGRECER DE FORMA DEFINITIVA!</a>
+        <small>Pagamento 100% seguro! Acesse o método assim que o pagamento for confirmado.</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq">
+    <h2>Dúvidas Frequentes</h2>
+    <div class="faq-intro">
+      <h3>Esse método funciona para qualquer pessoa?</h3>
+      <p>Sim! Ele foi desenvolvido para se adaptar à sua rotina e necessidades, garantindo resultados de forma saudável e sustentável.</p>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <h4>Preciso cortar totalmente algum tipo de alimento? <span>+</span></h4>
+      <div class="answer">De forma alguma. Você vai aprender a equilibrar, não a restringir.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <h4>Em quanto tempo verei resultados? <span>+</span></h4>
+      <div class="answer">Alguns alunos relatam mudanças em 2 semanas. O foco é constância.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <h4>E se eu não gostar do método? <span>+</span></h4>
+      <div class="answer">Você tem 7 dias de garantia para pedir reembolso total, sem burocracia.</div>
+    </div>
+  </section>
 
   <footer>
-    &copy; 2025 TransformaFácil. Todos os direitos reservados.
+    &copy; 2025 TransformaFácil. Todos os direitos reservados. Política de privacidade | Termos de uso
   </footer>
 
-  <script>
-    const countdown = document.getElementById("countdown");
-    const end = new Date();
-    end.setHours(end.getHours() + 1);
-    function updateCountdown() {
-      const now = new Date();
-      const diff = end - now;
-      if (diff <= 0) {
-        countdown.textContent = "00:00:00";
-        return;
-      }
-      const h = String(Math.floor(diff / 1000 / 60 / 60)).padStart(2, '0');
-      const m = String(Math.floor((diff / 1000 / 60) % 60)).padStart(2, '0');
-      const s = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
-      countdown.textContent = `${h}:${m}:${s}`;
-    }
-    setInterval(updateCountdown, 1000);
-  </script>
 </body>
 </html>
