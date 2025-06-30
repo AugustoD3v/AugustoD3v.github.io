@@ -3,291 +3,289 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TransformaFácil | Emagreça de verdade com leveza</title>
+  <title>TransformaFácil | Emagreça com leveza e constância</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/a2e0e6cfd3.js" crossorigin="anonymous"></script>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #0f172a; color: white; line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
-
-    header {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover;
-      padding: 8rem 2rem 6rem;
-      text-align: center;
-      color: #fff;
-    }
-    header h1 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: auto;
-    }
-    .cta {
-      margin-top: 2rem;
-      background: #3b82f6;
-      color: #fff;
-      padding: 1rem 2rem;
-      display: inline-block;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-    .cta:hover { background: #2563eb; }
-
-    .section {
-      padding: 4rem 2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .section h2 {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-    .feature-box {
-      background: #f8fafc;
-      color: #0f172a;
-      border-radius: 12px;
-      padding: 1.2rem 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-size: 0.95rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-    .feature-icon {
-      width: 36px;
-      height: 36px;
-      background-color: #3b82f6;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .feature-icon i {
-      color: white;
-      font-size: 16px;
-    }
-    @media (max-width: 600px) {
-      .feature-box {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    .price-box {
-      background: #111827;
-      color: #f1f5f9;
-      padding: 2rem;
-      border-radius: 12px;
-      text-align: left;
-      max-width: 640px;
-      margin: 2rem auto;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      font-size: 1rem;
-    }
-    .price-box ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .price-box ul li {
-      margin-bottom: 0.8rem;
-    }
-    .price-box .old-price {
-      font-size: 1rem;
-      color: #cbd5e1;
-      margin-bottom: 0.3rem;
-    }
-    .price-box .price {
-      font-size: 1.5rem;
-      color: #fff;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
-    }
-    .price-box .cta {
-      display: block;
-      margin: 0 auto;
-      background: #3b82f6;
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 700;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
-      transition: all 0.3s ease;
-    }
-    .price-box .cta:hover {
-      background: #2563eb;
-      transform: scale(1.02);
-    }
-    .price-box small {
-      display: block;
-      margin-top: 1rem;
-      color: #9ca3af;
-      font-size: 0.85rem;
-      text-align: center;
-    }
-
-    .faq-item {
-      background: #111827;
-      border-bottom: 1px solid #374151;
-      padding: 1.25rem 1rem;
-      cursor: pointer;
-    }
-    .faq-item:hover {
-      background: #1f2937;
-    }
-    .faq-item h4 {
-      font-size: 1rem;
-      font-weight: 600;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #fff;
-    }
-    .faq-item .answer {
-      margin-top: 0.75rem;
-      color: #cbd5e1;
-      display: none;
-    }
-    .faq-item.open .answer {
-      display: block;
-    }
-    .faq-item.open h4 span {
-      transform: rotate(45deg);
-    }
-    .faq-item h4 span {
-      transition: 0.2s;
-      font-size: 1.25rem;
-    }
-    .faq-intro {
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    .faq-intro h3 {
-      font-size: 1.1rem;
-      color: #60a5fa;
-      font-weight: 600;
-    }
-    .faq-intro p {
-      font-size: 1rem;
-      color: #cbd5e1;
-      max-width: 700px;
-      margin: 0.5rem auto 0;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #9ca3af;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
     <h1>Transforme seu corpo com leveza e constância</h1>
     <p>O método que ensina como perder peso com alimentação real e rotina possível. Sem culpa. Sem exagero. Sem desistir.</p>
-    <a href="#inscricao" class="cta">QUERO COMEÇAR AGORA</a>
+    <a href="#inscricao" class="cta">Quero começar agora</a>
   </header>
-
-  <section class="section">
-    <h2>Este método é para você se...</h2>
-    <div class="features">
-      <div class="feature-box">
-        <div class="feature-icon"><i class="fas fa-ban"></i></div>
-        <p>Já tentou várias dietas restritivas e nunca conseguiu manter o peso</p>
-      </div>
-      <div class="feature-box">
-        <div class="feature-icon"><i class="fas fa-heartbeat"></i></div>
-        <p>Quer emagrecer comendo bem, sem abrir mão do prazer de comer</p>
-      </div>
-      <div class="feature-box">
-        <div class="feature-icon"><i class="fas fa-dumbbell"></i></div>
-        <p>Não tem tempo ou paciência para passar horas na academia</p>
-      </div>
-      <div class="feature-box">
-        <div class="feature-icon"><i class="fas fa-smile-beam"></i></div>
-        <p>Deseja recuperar autoestima, leveza e confiança no espelho</p>
-      </div>
+  
+  <section class="section creator-section">
+    <div class="creator-content">
+        <h2>Michelle já esteve no seu lugar</h2>
+        <img src="images/michelle-antes-depois.jpg" alt="Foto de antes e depois de Michelle Machado, criadora do método" class="creator-image">
+        <div class="creator-text">
+            <p>Após eliminar <strong>17kg em 3 meses</strong> sem fórmulas milagrosas, Michelle Machado criou um método completo para mulheres que querem resultados reais, sustentáveis e sem sofrimento.</p>
+            <p>Hoje, ela lidera uma equipe com <strong>nutricionista, psicóloga, educador físico</strong> e suporte personalizado para transformar vidas com saúde e acolhimento.</p>
+            <p>Juntas, já transformaram mais de <strong>5.000 vidas</strong> com um método 100% aplicável online ou presencialmente.</p>
+        </div>
     </div>
   </section>
 
   <section class="section">
     <h2>Por que esse método é diferente de tudo que você já tentou?</h2>
     <div class="features">
-      <div class="feature-box">
-        <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
-        <p>Emagrecimento definitivo e sem efeito sanfona</p>
-      </div>
-      <div class="feature-box">
-        <div class="feature-icon"><i class="fas fa-utensils"></i></div>
-        <p>Coma o que você gosta com estratégia e sem culpa</p>
-      </div>
-      <div class="feature-box">
-        <div class="feature-icon"><i class="fas fa-clock"></i></div>
-        <p>Resultados reais com 30 minutos por dia</p>
-      </div>
-      <div class="feature-box">
-        <div class="feature-icon"><i class="fas fa-leaf"></i></div>
-        <p>Natural, sem remédios ou dietas malucas</p>
+        <div class="feature-box">
+          <div class="feature-icon">
+            <img src="icons/shield.svg" alt="Ícone de Escudo">
+          </div>
+          <div>
+            <h4>Fim do Efeito Sanfona</h4>
+            <p>Aprenda a <strong>manter seu resultado para sempre</strong>, sabendo como e quando comer carboidratos e doces sem culpa.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">
+            <img src="icons/brain.svg" alt="Ícone de Cérebro">
+          </div>
+          <div>
+            <h4>Reeducação Mental</h4>
+            <p>Antes de mudar o prato, vamos <strong>fortalecer sua mente</strong> para vencer a autossabotagem e criar uma disciplina inabalável.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">
+            <img src="icons/utensils.svg" alt="Ícone de Utensílios">
+          </div>
+          <div>
+            <h4>Sem Dietas Restritivas</h4>
+            <p>Descubra como usar a ciência a seu favor, com <strong>alimentos que aceleram seu metabolismo</strong>, sem precisar cortar o que você ama.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">
+             <img src="icons/check-circle.svg" alt="Ícone de Check">
+          </div>
+          <div>
+            <h4>Mudanças Graduais e Prazerosas</h4>
+            <p>Transforme o emagrecimento em um <strong>processo leve e prazeroso</strong>, com hábitos que se encaixam na sua rotina e personalidade.</p>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="highlight-box">
+        <h2>O mapa completo para sua transformação definitiva</h2>
+        <div class="features">
+            <div class="feature-box">
+              <div class="feature-icon">
+                <img src="icons/flag-checkered.svg" alt="Ícone de Bandeira">
+              </div>
+              <div>
+                  <h4>Módulo 1 - O Ponto de Partida</h4>
+                  <p>Alinhe suas expectativas para uma jornada realista e sem frustrações. Prepare sua mente e construa a base para um resultado duradouro.</p>
+              </div>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">
+                  <img src="icons/map-signs.svg" alt="Ícone de Placas">
+                </div>
+              <div>
+                  <h4>Módulo 2 - E Agora? O Plano Inicial</h4>
+                  <p>Receba um plano de ação claro para sair da inércia e começar hoje. Descubra a importância da Reeducação Alimentar (e por que não é dieta).</p>
+              </div>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">
+                  <img src="icons/bullseye.svg" alt="Ícone de Alvo">
+                </div>
+              <div>
+                  <h4>Módulo 3 - O Método na Prática</h4>
+                  <p>Aprenda o segredo do déficit calórico sem sofrimento. Use alimentos que aumentam a saciedade e aceleram o metabolismo.</p>
+              </div>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">
+                  <img src="icons/lock.svg" alt="Ícone de Cadeado">
+                </div>
+              <div>
+                  <h4>Módulo 4 - Como Manter o Resultado</h4>
+                  <p>O segredo para dar <strong>adeus definitivo ao efeito sanfona</strong>. Saiba como comer de tudo, inclusive doces, sem recuperar o peso.</p>
+              </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="highlight-box">
+      <h2>E ainda, um Bônus para acelerar seus resultados!</h2>
+      <div class="features" style="max-width: 500px; margin: auto;">
+          <div class="feature-box" style="background-color: #eef2ff;">
+              <div class="feature-icon">
+                <img src="icons/gift.svg" alt="Ícone de Presente">
+              </div>
+              <div>
+                  <h4>Bônus: Guia de Exercícios Que Derretem Gordura</h4>
+                  <p>Descubra as atividades físicas com maior queima de gordura, como a corrida (até 600 calorias em 30 min), para você escolher a que mais te dá prazer.</p>
+              </div>
+          </div>
       </div>
     </div>
   </section>
 
+  <section class="section">
+    <h2>Resultados Reais que Inspiram</h2>
+    <div class="before-after-grid">
+      <div class="before-after-card">
+        <img src="images/antes-e-depois-mulher.jpg" alt="Transformação de aluna do método">
+        <p class="caption">"A jornada foi espetacular!"</p>
+      </div>
+      <div class="before-after-card">
+        <img src="images/antes-e-depois-homem.jpg" alt="Transformação de aluno do método">
+        <p class="caption">"40 kg a menos transformou minha vida."</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+      <div class="highlight-box">
+        <h2>O que nossas alunas dizem</h2>
+        <div class="testimonials-grid">
+          
+          <div class="testimonial-card">
+            <img src="images/ana.jpg" alt="Foto de Ana Lucia" class="testimonial-photo">
+            <div class="testimonial-stars">
+              <img src="icons/star.svg" alt="Estrela"><img src="icons/star.svg" alt="Estrela"><img src="icons/star.svg" alt="Estrela"><img src="icons/star.svg" alt="Estrela"><img src="icons/star.svg" alt="Estrela">
+            </div>
+            <p class="quote">"O Guia é bem prático e objetivo. Gostando demais do conteúdo."</p>
+            <div class="testimonial-author-info">
+              <strong>Ana Lucia</strong>
+              <span>Professora</span>
+            </div>
+          </div>
+  
+          <div class="testimonial-card">
+            <img src="images/beatriz.jpg" alt="Foto de Beatriz Goes" class="testimonial-photo">
+            <div class="testimonial-stars">
+              <img src="icons/star.svg" alt="Estrela"><img src="icons/star.svg" alt="Estrela"><img src="icons/star.svg" alt="Estrela"><img src="icons/star.svg" alt="Estrela"><img src="icons/star.svg" alt="Estrela">
+            </div>
+            <p class="quote">"Fiquei com receio de comprar o guia mais vejo que fiz a escolha certa. Um mês colocando em prática e já colhendo os frutos."</p>
+            <div class="testimonial-author-info">
+              <strong>Beatriz Goes</strong>
+              <span>Analista Contábil</span>
+            </div>
+          </div>
+  
+          <div class="testimonial-card">
+            <img src="images/livia.jpg" alt="Foto de Lívia Souza" class="testimonial-photo">
+            <div class="testimonial-stars">
+              <img src="icons/star.svg" alt="Estrela"><img src="icons/star.svg" alt="Estrela"><img src="icons/star.svg" alt="Estrela"><img src="icons/star.svg" alt="Estrela"><img src="icons/star.svg" alt="Estrela">
+            </div>
+            <p class="quote">"Parabéns Transforma Fácil pelo conteúdo apresentado no Guia. 23 dias com alimentação e exercícios, minha autoestima é outra."</p>
+            <div class="testimonial-author-info">
+              <strong>Lívia Souza</strong>
+              <span>Publicitária</span>
+            </div>
+          </div>
+  
+          <div class="testimonial-card">
+            <img src="images/maria.jpg" alt="Foto de Maria Clara" class="testimonial-photo">
+            <div class="testimonial-stars">
+              <img src="icons/star.svg" alt="Estrela"><img src="icons/star.svg" alt="Estrela"><img src="icons/star.svg" alt="Estrela"><img src="icons/star.svg" alt="Estrela"><img src="icons/star.svg" alt="Estrela">
+            </div>
+            <p class="quote">"Ótimo guia. Melhorei minha alimentação e já estou tendo resultado."</p>
+            <div class="testimonial-author-info">
+              <strong>Maria Clara</strong>
+              <span>Assistente Social</span>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </section>
+
   <section class="section" id="inscricao">
-    <h2>7 dias para testar sem riscos</h2>
-    <div class="price-box">
-      <ul>
-        <li>Método completo para <strong>emagrecer sem sofrimento</strong> e <strong>sem efeito sanfona</strong>.</li>
-        <li>Aprenda a comer de tudo sem culpa e conquiste <strong>resultados duradouros</strong>.</li>
-        <li>Acesso imediato ao passo a passo que <em>já transformou muitas mulheres</em>.</li>
-        <li><strong>Bônus exclusivos</strong> para acelerar sua transformação!</li>
-      </ul>
-      <div class="old-price">De R$ 97,90 por apenas</div>
-      <div class="price">3x de R$ 13,88<br><span style="font-size: 1rem;">ou R$ 37,90 à vista</span></div>
-      <a href="https://pay.kirvano.com/4d22f69a-a04c-42b5-a865-be30f5c30d2e" class="cta">QUERO EMAGRECER DE FORMA DEFINITIVA!</a>
-      <small>Pagamento 100% seguro! Acesse o método assim que o pagamento for confirmado.</small>
+    <div class="highlight-box">
+      <h2>Sua transformação começa agora.<br>7 dias para testar sem riscos.</h2>
+      <div class="price-box">
+          <h3>Acesso Imediato a Todo o Método + Bônus</h3>
+          <ul>
+              <li><img class="li-icon" src="icons/check-circle-green.svg" alt="Check"><span>Os 4 Módulos do Método Completo.</span></li>
+              <li><img class="li-icon" src="icons/check-circle-green.svg" alt="Check"><span>O segredo para <strong>acabar com o efeito sanfona.</strong></span></li>
+              <li><img class="li-icon" src="icons/gift-green.svg" alt="Bônus"><span><strong>BÔNUS:</strong> Guia de Exercícios que Derretem Gordura.</span></li>
+              <li><img class="li-icon" src="icons/users-green.svg" alt="Comunidade"><span><strong>(Sugestão) BÔNUS 2:</strong> Acesso à Comunidade VIP.</span></li>
+          </ul>
+        <div class="price-value">
+            <div class="old-price">De <span style="text-decoration: line-through;">R$ 97,90</span> por apenas</div>
+            <div class="price">3x de R$ 13,88</div>
+            <span>ou R$ 37,90 à vista</span>
+        </div>
+        <a href="https://pay.kirvano.com/4d22f69a-a04c-42b5-a865-be30f5c30d2e" class="cta">Quero emagrecer de forma definitiva!</a>
+        <small>Pagamento 100% seguro! Acesso imediato.</small>
+        <small style="margin-top: 0.5rem;">Garantia incondicional de 7 dias. Seu risco é zero.</small>
+      </div>
     </div>
   </section>
 
   <section class="section faq">
-    <h2>Dúvidas Frequentes</h2>
-    <div class="faq-intro">
-      <h3>Esse método funciona para qualquer pessoa?</h3>
-      <p>Sim! Ele foi desenvolvido para se adaptar à sua rotina e necessidades, garantindo resultados de forma saudável e sustentável.</p>
-    </div>
-    <div class="faq-item" onclick="this.classList.toggle('open')">
-      <h4>Preciso cortar totalmente algum tipo de alimento? <span>+</span></h4>
-      <div class="answer">De forma alguma. Você vai aprender a equilibrar, não a restringir.</div>
-    </div>
-    <div class="faq-item" onclick="this.classList.toggle('open')">
-      <h4>Em quanto tempo verei resultados? <span>+</span></h4>
-      <div class="answer">Alguns alunos relatam mudanças em 2 semanas. O foco é constância.</div>
-    </div>
-    <div class="faq-item" onclick="this.classList.toggle('open')">
-      <h4>E se eu não gostar do método? <span>+</span></h4>
-      <div class="answer">Você tem 7 dias de garantia para pedir reembolso total, sem burocracia.</div>
+    <h2>Ainda tem dúvidas?</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <h4>Preciso cortar totalmente algum tipo de alimento?</h4> <span>+</span>
+            </div>
+            <div class="faq-answer">
+                <p>De forma alguma. O método se baseia em equilíbrio e reeducação, não em restrição. Você aprenderá a incluir todos os alimentos que ama, pois o segredo é saber o quê, quando e quanto comer.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <h4>Em quanto tempo verei resultados?</h4> <span>+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Uma perda de peso saudável é de meio a um quilo por semana. Nosso foco é em resultados duradouros, que vêm com a aplicação consistente do método e a mudança gradual de hábitos.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <h4>Não tenho muito tempo, funciona pra mim?</h4> <span>+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Sim! O método foi desenvolvido para se adaptar à sua rotina. As estratégias são simples e os exercícios sugeridos são eficientes e podem ser feitos em 30 minutos, sem precisar de academia.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <h4>E se eu não gostar do método?</h4> <span>+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Seu risco é zero. Você tem 7 dias de garantia incondicional. Se por qualquer motivo achar que o método não é para você, basta pedir o reembolso e devolvemos 100% do seu dinheiro.</p>
+            </div>
+        </div>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 TransformaFácil. Todos os direitos reservados. Política de privacidade | Termos de uso
+    &copy; 2025 TransformaFácil. Todos os direitos reservados.<br>
+    <a href="#">Política de privacidade</a> | <a href="#">Termos de uso</a>
   </footer>
+
+  <script>
+    // Script para o funcionamento do FAQ (Accordion)
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const isOpen = item.classList.contains('open');
+            // Fecha todos os itens
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove('open');
+            });
+            // Se não estava aberto, abre o item clicado
+            if (!isOpen) {
+                item.classList.toggle('open');
+            }
+        });
+    });
+  </script>
 
 </body>
 </html>
